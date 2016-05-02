@@ -1,14 +1,18 @@
 package com.gunjan.model;
 
 import java.util.HashSet;
+import java.util.Set;
 
-
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 
+@Entity
+@DiscriminatorValue("Director")
 public class Director extends Person {
 	
 	@OneToMany(mappedBy= "director")
-	public HashSet<Movie> directedMovies = new HashSet<Movie>();
+	public Set<Movie> directedMovies = new HashSet<Movie>();
 	
 	public String getMovies() {
 		// TODO Auto-generated method stub
@@ -22,7 +26,7 @@ public class Director extends Person {
 		}
 	}
 
-	public HashSet<Movie> getDirectedMovies() {
+	public Set<Movie> getDirectedMovies() {
 		return directedMovies;
 	}
 

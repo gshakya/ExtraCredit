@@ -1,6 +1,7 @@
 package com.gunjan.model;
 
 import java.util.HashSet;
+import java.util.Set;
 
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
@@ -11,8 +12,8 @@ import javax.persistence.ManyToMany;
 @DiscriminatorValue("Actor")
 public class Actor extends Person {
 	
-	@ManyToMany(mappedBy = "Actors")
-	private HashSet<Movie> actedMovies= new HashSet<Movie>();
+	@ManyToMany(mappedBy = "actors")
+	private Set<Movie> actedMovies= new HashSet<Movie>();
 	
 	public void addMovie(Movie m){
 		actedMovies.add(m);
@@ -22,7 +23,7 @@ public class Actor extends Person {
 		}
 	}
 
-	public HashSet<Movie> getActedMovies() {
+	public Set<Movie> getActedMovies() {
 		return actedMovies;
 	}
 	

@@ -1,6 +1,7 @@
 package com.gunjan.model;
 
 import java.util.HashSet;
+import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -23,14 +24,14 @@ public class Movie {
 	@JoinTable(name = "Movie_Actor", 
 			   joinColumns = @JoinColumn(name = "Movie_Id"), 
 			   inverseJoinColumns = @JoinColumn(name = "Actor_Id"))
-	private HashSet<Actor> actors = new HashSet<Actor>();
+	private Set<Actor> actors = new HashSet<Actor>();
 	
 		
 	@ManyToOne
 	@JoinColumn(name= "director_id")
 	private Director director;
 	
-	public HashSet<Actor> getActors() {
+	public Set<Actor> getActors() {
 
 		return actors;
 	}

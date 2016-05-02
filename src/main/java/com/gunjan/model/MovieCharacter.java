@@ -8,7 +8,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
 @Entity
-public class Character {
+public class MovieCharacter {
 	@Id
 	@GeneratedValue
 	private int id;
