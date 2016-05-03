@@ -40,6 +40,9 @@ public class App {
 				logger.error("Rolling back:", e);
 				tx.rollback();
 			}
+			if (emf.isOpen()) {
+				emf.close();
+			}
 	
 		}
 		if (tx != null) {
@@ -49,5 +52,9 @@ public class App {
 		if (emf.isOpen()) {
 			emf.close();
 		}
+	}
+	
+	public static void populateData(){
+		
 	}
 }
