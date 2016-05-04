@@ -1,5 +1,7 @@
 package com.gunjan.model;
 
+import java.util.Arrays;
+
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.DiscriminatorType;
@@ -38,6 +40,11 @@ public abstract class Person {
 
 	public void setPicture(byte[] picture) {
 		this.picture = picture;
+	}
+
+	@Override
+	public String toString() {
+		return "Name=" + name ;
 	}
 	
 	
