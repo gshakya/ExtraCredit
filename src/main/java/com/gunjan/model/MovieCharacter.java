@@ -1,5 +1,6 @@
 package com.gunjan.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -15,11 +16,11 @@ public class MovieCharacter {
 	
 	private String name;
 	
-	@OneToOne
+	@OneToOne 
 	@JoinColumn(name="movie_id")
 	private Movie movie;
 	
-	@ManyToOne
+	@ManyToOne (cascade = {CascadeType.PERSIST})
 	@JoinColumn(name= "Actor_Id")
 	private Actor actor;
 

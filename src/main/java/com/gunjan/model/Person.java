@@ -1,5 +1,6 @@
 package com.gunjan.model;
 
+import javax.persistence.Column;
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.DiscriminatorType;
 import javax.persistence.Entity;
@@ -19,7 +20,8 @@ public abstract class Person {
 	private long id;
 
 	private String name;
-
+	
+	@Column(columnDefinition = "LONGBLOB") 
 	private byte[] picture;
 
 	public String getName() {
@@ -37,5 +39,6 @@ public abstract class Person {
 	public void setPicture(byte[] picture) {
 		this.picture = picture;
 	}
-
+	
+	
 }
