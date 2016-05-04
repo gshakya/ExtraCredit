@@ -22,11 +22,11 @@ public class Movie {
 	@Id
 	@GeneratedValue
 	private long movie_id;
-	@ManyToMany(cascade = CascadeType.PERSIST)
-	@JoinTable(name = "Movie_Actor", joinColumns = @JoinColumn(name = "movie_id"), inverseJoinColumns = @JoinColumn(name = "id"))
+	@ManyToMany(cascade = {CascadeType.PERSIST,CascadeType.REMOVE})
+	@JoinTable(name = "Movie_Actor", joinColumns = @JoinColumn(name = "movie_id"), inverseJoinColumns = @JoinColumn(name = "Actor_id"))
 	private Set<Actor> actors = new HashSet<Actor>();
 
-	@ManyToOne(cascade = CascadeType.PERSIST)
+	@ManyToOne(cascade = {CascadeType.PERSIST,CascadeType.REMOVE})
 	@JoinColumn(name = "director_id")
 	private Director director;
 	private String title;

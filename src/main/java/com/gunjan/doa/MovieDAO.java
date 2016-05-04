@@ -51,6 +51,16 @@ public class MovieDAO implements IMovieDAO{
 		query.setParameter("rating", rating);
 		return query.getResultList();
 	}
+
+	@Override
+	public void removeMovie(Long id) {
+		Movie m = em.find(Movie.class,id);
+		em.getTransaction().begin();
+		em.remove(m);
+		em.getTransaction().commit();
+		
+	}
+	
 	
 
 }

@@ -16,11 +16,11 @@ public class MovieCharacter {
 	
 	private String name;
 	
-	@ManyToOne 
+	@ManyToOne (cascade = {CascadeType.PERSIST,CascadeType.REMOVE})
 	@JoinColumn(name="movie_id")
 	private Movie movie;
 	
-	@ManyToOne (cascade = {CascadeType.PERSIST})
+	@ManyToOne (cascade = {CascadeType.PERSIST,CascadeType.REMOVE})
 	@JoinColumn(name= "Actor_Id")
 	private Actor actor;
 

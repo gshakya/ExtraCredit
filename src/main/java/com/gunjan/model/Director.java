@@ -3,6 +3,7 @@ package com.gunjan.model;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
@@ -11,7 +12,7 @@ import javax.persistence.OneToMany;
 @DiscriminatorValue("Director")
 public class Director extends Person {
 	
-	@OneToMany(mappedBy= "director")
+	@OneToMany(mappedBy= "director",cascade={CascadeType.PERSIST,CascadeType.REMOVE})
 	public Set<Movie> directedMovies = new HashSet<Movie>();
 	
 	public String getMovies() {

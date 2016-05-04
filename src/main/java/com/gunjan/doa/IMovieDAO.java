@@ -12,6 +12,7 @@ public interface IMovieDAO {
 	public List<Movie> getMovieByYear(int year);
 	public List<Movie> getMovieByGenre(MovieGenre genre);
 	public List<Movie> getMovieByRating(MovieRating rating);
+	public void removeMovie(Long id);
 	
 
 }
